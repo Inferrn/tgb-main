@@ -1,0 +1,40 @@
+# App specific
+/app/database/__pycache__/
+/app/__pycache__/
+/app/data/__pycache__/
+/app/handlers/__pycache__/
+/app/middleware/__pycache__/
+/app/services/__pycache__/
+/app/states/__pycache__/
+/app/ui/__pycache__/
+/.env
+/.env.local
+
+# Logs
+/logs/*
+*.log
+
+# Distribution / packaging
+/dist/
+/build/
+*.egg-info/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+coverage.xml
+*.cover
+.hypothesis/
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS specific
+.DS_Store
+Thumbs.db
