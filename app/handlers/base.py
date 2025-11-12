@@ -41,6 +41,12 @@ async def cb_start_survey(callback: CallbackQuery, state: FSMContext,
                           message_builder: MessageBuilder = None):
     """Callback для запуска опроса из приветственного сообщения"""
     # Инициализируем состояние опроса и отправляем первый вопрос
+    # Сначала очистим предыдущее состояние, чтобы не осталось флагов вроде processing_answer
+    try:
+        await state.clear()
+    except Exception:
+        pass
+
     await state.set_state(SurveyStates.in_progress)
     await state.update_data({
         "current_module": getattr(Config, "DEFAULT_MODULE", None),
@@ -68,7 +74,8 @@ async def greet_user(message: Message, state: FSMContext,
     # Если опрос уже идёт — ничего не делаем
     current = await state.get_state()
     try:
-        if current == SurveyStates.in_progress:
+        # current can be a State object or its string name; cover common cases
+        if current == SurveyStates.in_progress or (isinstance(current, str) and current.endswith(":in_progress")):
             return
     except Exception:
         pass

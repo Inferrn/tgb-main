@@ -102,10 +102,15 @@ class MessageBuilder:
                 else:
                     options_lines.append(f"{i}. {label}")
 
+        # Показываем варианты ответов в тексте сообщения ТОЛЬКО для специального вопроса
+        # (по текущей задаче — вопрос с id == 5). Это убирает дублирование ответов
+        # в окне с вопросом для остальных вопросов.
+        include_options = getattr(question, "id", None) == 5
+
         # Если у вопроса есть изображение — отправляем фото с подписью, включающей опции
         if getattr(question, "image", None) and self.image_service.has_image(question.image):
             caption = question.text
-            if options_lines:
+            if options_lines and include_options:
                 caption += "\n\n" + "\n".join(options_lines)
             m = await message.answer_photo(
                 photo=self.image_service.get_image(question.image),
@@ -145,7 +150,7 @@ class MessageBuilder:
         full_text = question.text
         if level_texts:
             full_text += "\n\n" + "\n".join(level_texts)
-        if options_lines:
+        if options_lines and include_options:
             full_text += "\n\n" + "\n".join(options_lines)
 
         m = await message.answer(full_text, reply_markup=markup)
@@ -162,7 +167,8 @@ class MessageBuilder:
 
         text = getattr(question, "text", "Вопрос")
         opts = getattr(question, "options", None) or []
-        if opts:
+        include_options = getattr(question, "id", None) == 5
+        if opts and include_options:
             lines = [text, ""]
             for i, opt in enumerate(opts, start=1):
                 label = getattr(opt, "text", None) or getattr(opt, "label", None) or str(opt)
@@ -189,13 +195,15 @@ class MessageBuilder:
             level_title = getattr(level, "text", f"Уровень {level_index + 1}")
 
         opts = getattr(level, "options", None) or []
+        include_options = getattr(question, "id", None) == 5
         lines = [f"{title} — {level_title}", ""]
-        for i, opt in enumerate(opts, start=1):
-            label = getattr(opt, "text", None) or getattr(opt, "label", None) or str(opt)
-            if isinstance(label, str) and label.strip() and label.strip()[0].isdigit():
-                lines.append(label)
-            else:
-                lines.append(f"{i}. {label}")
+        if opts and include_options:
+            for i, opt in enumerate(opts, start=1):
+                label = getattr(opt, "text", None) or getattr(opt, "label", None) or str(opt)
+                if isinstance(label, str) and label.strip() and label.strip()[0].isdigit():
+                    lines.append(label)
+                else:
+                    lines.append(f"{i}. {label}")
         return "\n".join(lines)
 
     def build_finish_text(self, results: dict) -> str:

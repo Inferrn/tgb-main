@@ -24,6 +24,7 @@ __pycache__/
 /app/ui/__pycache__/
 /.env
 /.env.local
+/.env.example
 
 # Logs
 /logs/*

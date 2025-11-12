@@ -54,10 +54,11 @@ def load_survey_data(file_path: str) -> SurveyData:
             
             # Создаем модули с вопросами
             modules = {}
-            for module_name in ["modul_1", "modul_2"]:
-                if module_name in data:
-                    questions = {q["id"]: _convert_to_question(q) for q in data[module_name]}
-                    modules[module_name] = Module(questions=questions)
+            # Ищем все модули в данных (ключи, начинающиеся с "modul_")
+            module_names = [key for key in data.keys() if key.startswith("modul_")]
+            for module_name in module_names:
+                questions = {q["id"]: _convert_to_question(q) for q in data[module_name]}
+                modules[module_name] = Module(questions=questions)
 
             # Заменяем в уровнях ссылочные строки типа "options_scale" на реальные массивы из корня JSON
             options_scale = data.get("options_scale", [])

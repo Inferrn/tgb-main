@@ -1,0 +1,586 @@
+{
+  "runs": [
+    {
+      "index": 0,
+      "tg_id": 451419548,
+      "anketa_id": 15,
+      "status": "ok"
+    },
+    {
+      "index": 1,
+      "tg_id": 169001384,
+      "anketa_id": 16,
+      "status": "ok"
+    },
+    {
+      "index": 2,
+      "tg_id": 1634573203,
+      "anketa_id": 17,
+      "status": "ok"
+    },
+    {
+      "index": 3,
+      "tg_id": 642692270,
+      "anketa_id": 18,
+      "status": "ok"
+    },
+    {
+      "index": 4,
+      "tg_id": 1278801851,
+      "anketa_id": 19,
+      "status": "ok"
+    }
+  ],
+  "persona": [
+    {
+      "id": 7,
+      "user_id": 123456789,
+      "username": "test_user"
+    },
+    {
+      "id": 8,
+      "user_id": 1167189075,
+      "username": "test_user"
+    },
+    {
+      "id": 9,
+      "user_id": 1456765777,
+      "username": "test_user"
+    },
+    {
+      "id": 10,
+      "user_id": 1481327765,
+      "username": "test_user_0"
+    },
+    {
+      "id": 11,
+      "user_id": 171106931,
+      "username": "test_user_1"
+    },
+    {
+      "id": 12,
+      "user_id": 1510397409,
+      "username": "test_user_2"
+    },
+    {
+      "id": 13,
+      "user_id": 1049932990,
+      "username": "test_user_3"
+    },
+    {
+      "id": 14,
+      "user_id": 1396265748,
+      "username": "test_user_4"
+    },
+    {
+      "id": 15,
+      "user_id": 451419548,
+      "username": "test_user_0"
+    },
+    {
+      "id": 16,
+      "user_id": 169001384,
+      "username": "test_user_1"
+    },
+    {
+      "id": 17,
+      "user_id": 1634573203,
+      "username": "test_user_2"
+    },
+    {
+      "id": 18,
+      "user_id": 642692270,
+      "username": "test_user_3"
+    },
+    {
+      "id": 19,
+      "user_id": 1278801851,
+      "username": "test_user_4"
+    }
+  ],
+  "anketa": [
+    {
+      "id": 7,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 8,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 9,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 10,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 11,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 12,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 13,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 14,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 15,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 16,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 17,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 18,
+      "id_q": 1,
+      "group_id": null
+    },
+    {
+      "id": 19,
+      "id_q": 1,
+      "group_id": null
+    }
+  ],
+  "anketa_answers": [
+    {
+      "id": 1,
+      "anketa_id": 7,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "25-34",
+      "created_at": "2025-11-12 00:45:38.129762"
+    },
+    {
+      "id": 2,
+      "anketa_id": 7,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 00:45:38.129762"
+    },
+    {
+      "id": 3,
+      "anketa_id": 7,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 00:45:38.129762"
+    },
+    {
+      "id": 4,
+      "anketa_id": 7,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "Ежемесячная подписка",
+      "created_at": "2025-11-12 00:45:38.129762"
+    },
+    {
+      "id": 5,
+      "anketa_id": 8,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "25-34",
+      "created_at": "2025-11-12 01:01:25.524938"
+    },
+    {
+      "id": 6,
+      "anketa_id": 8,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:01:25.524938"
+    },
+    {
+      "id": 7,
+      "anketa_id": 8,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:01:25.524938"
+    },
+    {
+      "id": 8,
+      "anketa_id": 8,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "Ежемесячная подписка",
+      "created_at": "2025-11-12 01:01:25.524938"
+    },
+    {
+      "id": 9,
+      "anketa_id": 9,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "25-34",
+      "created_at": "2025-11-12 01:03:00.206957"
+    },
+    {
+      "id": 10,
+      "anketa_id": 9,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:03:00.206957"
+    },
+    {
+      "id": 11,
+      "anketa_id": 9,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:03:00.206957"
+    },
+    {
+      "id": 12,
+      "anketa_id": 9,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "Ежемесячная подписка",
+      "created_at": "2025-11-12 01:03:00.206957"
+    },
+    {
+      "id": 13,
+      "anketa_id": 10,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "age_group_0",
+      "created_at": "2025-11-12 01:06:23.215352"
+    },
+    {
+      "id": 14,
+      "anketa_id": 10,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:06:23.215352"
+    },
+    {
+      "id": 15,
+      "anketa_id": 10,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:06:23.215352"
+    },
+    {
+      "id": 16,
+      "anketa_id": 10,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "opt",
+      "created_at": "2025-11-12 01:06:23.215352"
+    },
+    {
+      "id": 17,
+      "anketa_id": 11,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "age_group_1",
+      "created_at": "2025-11-12 01:06:23.223980"
+    },
+    {
+      "id": 18,
+      "anketa_id": 11,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:06:23.223980"
+    },
+    {
+      "id": 19,
+      "anketa_id": 11,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:06:23.223980"
+    },
+    {
+      "id": 20,
+      "anketa_id": 11,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "opt",
+      "created_at": "2025-11-12 01:06:23.223980"
+    },
+    {
+      "id": 21,
+      "anketa_id": 12,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "age_group_2",
+      "created_at": "2025-11-12 01:06:23.229120"
+    },
+    {
+      "id": 22,
+      "anketa_id": 12,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:06:23.229120"
+    },
+    {
+      "id": 23,
+      "anketa_id": 12,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:06:23.229120"
+    },
+    {
+      "id": 24,
+      "anketa_id": 12,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "opt",
+      "created_at": "2025-11-12 01:06:23.229120"
+    },
+    {
+      "id": 25,
+      "anketa_id": 13,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "age_group_3",
+      "created_at": "2025-11-12 01:06:23.234130"
+    },
+    {
+      "id": 26,
+      "anketa_id": 13,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:06:23.234130"
+    },
+    {
+      "id": 27,
+      "anketa_id": 13,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:06:23.234130"
+    },
+    {
+      "id": 28,
+      "anketa_id": 13,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "opt",
+      "created_at": "2025-11-12 01:06:23.234130"
+    },
+    {
+      "id": 29,
+      "anketa_id": 14,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "age_group_4",
+      "created_at": "2025-11-12 01:06:23.239530"
+    },
+    {
+      "id": 30,
+      "anketa_id": 14,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:06:23.239530"
+    },
+    {
+      "id": 31,
+      "anketa_id": 14,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:06:23.239530"
+    },
+    {
+      "id": 32,
+      "anketa_id": 14,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "opt",
+      "created_at": "2025-11-12 01:06:23.239530"
+    },
+    {
+      "id": 33,
+      "anketa_id": 15,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "age_group_0",
+      "created_at": "2025-11-12 01:06:51.727595"
+    },
+    {
+      "id": 34,
+      "anketa_id": 15,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:06:51.727595"
+    },
+    {
+      "id": 35,
+      "anketa_id": 15,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:06:51.727595"
+    },
+    {
+      "id": 36,
+      "anketa_id": 15,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "opt",
+      "created_at": "2025-11-12 01:06:51.727595"
+    },
+    {
+      "id": 37,
+      "anketa_id": 16,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "age_group_1",
+      "created_at": "2025-11-12 01:06:51.734677"
+    },
+    {
+      "id": 38,
+      "anketa_id": 16,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:06:51.734677"
+    },
+    {
+      "id": 39,
+      "anketa_id": 16,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:06:51.734677"
+    },
+    {
+      "id": 40,
+      "anketa_id": 16,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "opt",
+      "created_at": "2025-11-12 01:06:51.734677"
+    },
+    {
+      "id": 41,
+      "anketa_id": 17,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "age_group_2",
+      "created_at": "2025-11-12 01:06:51.738713"
+    },
+    {
+      "id": 42,
+      "anketa_id": 17,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:06:51.738713"
+    },
+    {
+      "id": 43,
+      "anketa_id": 17,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:06:51.738713"
+    },
+    {
+      "id": 44,
+      "anketa_id": 17,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "opt",
+      "created_at": "2025-11-12 01:06:51.738713"
+    },
+    {
+      "id": 45,
+      "anketa_id": 18,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "age_group_3",
+      "created_at": "2025-11-12 01:06:51.743521"
+    },
+    {
+      "id": 46,
+      "anketa_id": 18,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:06:51.743521"
+    },
+    {
+      "id": 47,
+      "anketa_id": 18,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:06:51.743521"
+    },
+    {
+      "id": 48,
+      "anketa_id": 18,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "opt",
+      "created_at": "2025-11-12 01:06:51.743521"
+    },
+    {
+      "id": 49,
+      "anketa_id": 19,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "age_group_4",
+      "created_at": "2025-11-12 01:06:51.747671"
+    },
+    {
+      "id": 50,
+      "anketa_id": 19,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "A",
+      "created_at": "2025-11-12 01:06:51.747671"
+    },
+    {
+      "id": 51,
+      "anketa_id": 19,
+      "question_id": 3,
+      "answer_id": null,
+      "answer_text": "B",
+      "created_at": "2025-11-12 01:06:51.747671"
+    },
+    {
+      "id": 52,
+      "anketa_id": 19,
+      "question_id": 1,
+      "answer_id": null,
+      "answer_text": "opt",
+      "created_at": "2025-11-12 01:06:51.747671"
+    }
+  ]
+}

@@ -109,12 +109,20 @@ class SurveyService:
             if current_index + 1 < len(module_questions):
                 next_question_id = module_questions[current_index + 1]
             else:
-                # Если текущий модуль закончился, переходим к следующему
-                if module == "modul_1" and "modul_2" in self.survey_data.modules:
-                    next_module = "modul_2"
-                    next_question_id = min(self.survey_data.modules[next_module].questions.keys())
-                else:
-                    # Конец опроса
+                # Если текущий модуль закончился, переходим к следующему модулю
+                # Опираемся на порядок модулей в загруженных данных (порядок ключей JSON)
+                module_names = list(self.survey_data.modules.keys())
+                try:
+                    idx = module_names.index(module)
+                    if idx + 1 < len(module_names):
+                        next_module = module_names[idx + 1]
+                        next_question_id = min(self.survey_data.modules[next_module].questions.keys())
+                    else:
+                        # Конец опроса
+                        return None, None
+                except ValueError:
+                    # Текущий модуль не найден — завершаем опрос
+                    logger.warning(f"get_next_question: current module {module} not found in survey modules")
                     return None, None
 
         logger.info(f"Следующий вопрос: модуль={next_module}, id={next_question_id}")

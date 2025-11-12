@@ -14,6 +14,7 @@ from app.data.data_loader import load_survey_data
 from app.config import Config
 from app.services.image_service import ImageService
 from app.services.survey_service import SurveyService
+from app.services.db_service import DBService
 from app.ui.keyboards import KeyboardFactory
 from app.ui.message_builder import MessageBuilder
 
@@ -66,12 +67,49 @@ async def setup_bot(token: str):
         images_dir = Path(__file__).parent.joinpath("images")
     image_service = ImageService(str(images_dir))
     message_builder = MessageBuilder(image_service)
+    # DB: ensure tables and provide db_service
+    try:
+        from app.database.models import engine, Base
+        db_service = DBService()
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+        logger.info("Database tables ensured")
+    except Exception as e:
+        logger.exception("Failed to init database: %s", e)
+        db_service = DBService()
 
     # middleware для инъекции зависимостей в kwargs хэндлеров (message / callback_query)
     async def inject_deps(handler, event, data: dict):
-        data.setdefault("survey_service", survey_service)
-        data.setdefault("keyboard_factory", keyboard_factory)
-        data.setdefault("message_builder", message_builder)
+        # Diagnostic logging: record whether db_service is available when middleware runs
+        try:
+            evt_name = type(event).__name__ if event is not None else 'None'
+            handler_name = getattr(handler, '__name__', repr(handler))
+            # use INFO level so diagnostic appears in default logs and helps debugging in production
+            logger.info("inject_deps: handler=%s event=%s db_service_present=%s", handler_name, evt_name, db_service is not None)
+            try:
+                # extra debug info: what keys are already present in data before assignment
+                logger.debug("inject_deps.debug: preassign data keys=%s", list(data.keys()))
+            except Exception:
+                logger.debug("inject_deps.debug: could not list preassign data keys")
+        except Exception:
+            logger.info("inject_deps: could not log dependency injection info")
+
+        # force-assign dependencies into handler data. Use explicit assignment to avoid
+        # existing user/state keys silently shadowing injected services (was using setdefault).
+        data["survey_service"] = survey_service
+        data["keyboard_factory"] = keyboard_factory
+        data["message_builder"] = message_builder
+        data["db_service"] = db_service
+        try:
+            # log id/type and final keys after assignment at DEBUG level (non-sensitive)
+            logger.debug(
+                "inject_deps.debug: assigned services db_service_id=%s db_service_type=%s data_keys=%s",
+                id(db_service) if db_service is not None else None,
+                type(db_service).__name__ if db_service is not None else None,
+                list(data.keys())
+            )
+        except Exception:
+            logger.debug("inject_deps.debug: could not log assigned services info")
         return await handler(event, data)
 
     # регистрируем middleware для сообщений и callback_query
